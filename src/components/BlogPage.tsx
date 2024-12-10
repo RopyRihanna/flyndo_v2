@@ -1,66 +1,65 @@
-"use client";
-
+import React from 'react';
 import { Calendar, User, ArrowRight, Search } from 'lucide-react';
 
 export function BlogPage() {
   const featuredPost = {
-    title: "How to Find Cheap Flights: Complete Guide",
-    excerpt: "Learn proven methods for finding cheap flights. From choosing the right timing to the best search engines - everything you need to know.",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=600&fit=crop",
-    date: "March 15, 2024",
-    author: "Anna Smith",
-    category: "Tips"
+    title: 'Jak znaleźć tanie loty? Kompletny przewodnik',
+    excerpt: 'Poznaj sprawdzone metody na znalezienie tanich lotów. Od wyboru odpowiedniego terminu po najlepsze wyszukiwarki - wszystko, co musisz wiedzieć.',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=600&fit=crop',
+    date: '15 marca 2024',
+    author: 'Anna Kowalska',
+    category: 'Porady'
   };
 
   const posts = [
     {
-      title: "10 Hidden Beaches in Europe",
-      excerpt: "Discover the most beautiful but lesser-known beaches in Europe. From Greek islands to Portuguese bays.",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
-      date: "March 12, 2024",
-      author: "Peter Johnson",
-      category: "Inspiration"
+      title: '10 ukrytych plaż Europy',
+      excerpt: 'Odkryj najpiękniejsze, ale mało znane plaże w Europie. Od greckich wysepek po portugalskie zatoki.',
+      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop',
+      date: '12 marca 2024',
+      author: 'Piotr Nowak',
+      category: 'Inspiracje'
     },
     {
-      title: "Best Cities for a Weekend Break",
-      excerpt: "Planning a short trip? Choose one of these cities. We guarantee you won't regret it!",
-      image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=600&fit=crop",
-      date: "March 10, 2024",
-      author: "Martha Wilson",
-      category: "Guides"
+      title: 'Najlepsze miasta na city break',
+      excerpt: 'Planując krótki wypad, wybierz jedno z tych miast. Gwarantujemy, że nie pożałujesz!',
+      image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=600&fit=crop',
+      date: '10 marca 2024',
+      author: 'Marta Wiśniewska',
+      category: 'Przewodniki'
     },
     {
-      title: "What to Pack in Your Carry-on?",
-      excerpt: "Essential items you should always have in your carry-on luggage.",
-      image: "https://images.unsplash.com/photo-1553531384-cc64ac80f931?w=800&h=600&fit=crop",
-      date: "March 8, 2024",
-      author: "John Smith",
-      category: "Tips"
+      title: 'Co spakować do bagażu podręcznego?',
+      excerpt: 'Lista niezbędnych rzeczy, które zawsze powinieneś mieć w swoim bagażu podręcznym.',
+      image: 'https://images.unsplash.com/photo-1553531384-cc64ac80f931?w=800&h=600&fit=crop',
+      date: '8 marca 2024',
+      author: 'Jan Kowalski',
+      category: 'Porady'
     }
   ];
 
-  const categories = ['All', 'Tips', 'Inspiration', 'Guides', 'Stories'];
+  const categories = ['Wszystkie', 'Porady', 'Inspiracje', 'Przewodniki', 'Relacje'];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <h1 className="text-3xl font-bold">Travel Blog</h1>
+            <h1 className="text-3xl font-bold">Blog podróżniczy</h1>
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Szukaj artykułów..."
                 className="pl-10 pr-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
             </div>
           </div>
-          <div className="flex gap-4 mt-6 overflow-x-auto">
+          <div className="flex gap-4 mt-6">
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+                className="px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors"
               >
                 {category}
               </button>
@@ -113,7 +112,7 @@ export function BlogPage() {
                     {post.category}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
                   <div className="flex items-center">
@@ -133,7 +132,7 @@ export function BlogPage() {
         {/* Load More Button */}
         <div className="text-center mt-12">
           <button className="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">
-            Load More
+            Załaduj więcej
             <ArrowRight className="w-4 h-4 ml-2" />
           </button>
         </div>

@@ -23,7 +23,16 @@ export const flightDeals: FlightDeal[] = Array(20).fill(null).map((_, i) => ({
     'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&h=600&fit=crop'
-  ][i % 5]
+  ][i % 5],
+  airline: ['Ryanair', 'Wizz Air', 'LOT', 'Lufthansa', 'KLM'][i % 5],
+  duration: ['2h 15m', '2h 45m', '3h', '2h 30m', '3h 15m'][i % 5],
+  baggage: 'Bagaż podręczny',
+  description: `Odkryj magię ${['Barcelony', 'Rzymu', 'Paryża', 'Londynu', 'Porto'][i % 5]} w niezwykłej cenie! Ta oferta obejmuje lot w obie strony z Warszawy.`,
+  terms: [
+    'Brak możliwości zwrotu',
+    'Możliwość zmiany daty za opłatą',
+    'Cena może ulec zmianie'
+  ]
 }));
 
 export const destinations: Destination[] = [
@@ -31,73 +40,241 @@ export const destinations: Destination[] = [
     name: 'Paris',
     count: 156,
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop',
-    region: 'Europe'
+    region: 'Europe',
+    description: 'Paris, the City of Light, is renowned for its stunning architecture, world-class museums, and exquisite cuisine. From the iconic Eiffel Tower to the charming Montmartre district, every corner tells a story.',
+    weather: {
+      bestTime: 'April - October',
+      avgTemp: '20°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Eiffel Tower',
+      'Louvre Museum',
+      'Notre-Dame Cathedral',
+      'Champs-Élysées',
+      'Montmartre',
+      'Seine River'
+    ]
   },
   {
     name: 'Barcelona',
-    count: 134,
+    count: 143,
     image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop',
-    region: 'Europe'
+    region: 'Europe',
+    description: 'Barcelona, the capital of Catalonia, is a city full of artistic spirit, magnificent architecture, and rich culture. Famous for Gaudi\'s works, including the amazing Sagrada Familia, and the vibrant La Rambla.',
+    weather: {
+      bestTime: 'May - October',
+      avgTemp: '25°C',
+      rainfall: 'Low'
+    },
+    highlights: [
+      'Sagrada Familia',
+      'Park Güell',
+      'La Rambla',
+      'Barceloneta Beach',
+      'Camp Nou',
+      'Gothic Quarter'
+    ]
   },
   {
     name: 'Rome',
     count: 145,
     image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=600&fit=crop',
-    region: 'Europe'
+    region: 'Europe',
+    description: 'Rome, the Eternal City, is a treasure trove of history, architecture, and art. From the Colosseum to the Pantheon, every landmark is a testament to the city\'s rich heritage.',
+    weather: {
+      bestTime: 'April - October',
+      avgTemp: '22°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Colosseum',
+      'Vatican City',
+      'Pantheon',
+      'Trevi Fountain',
+      'Spanish Steps',
+      'Roman Forum'
+    ]
   },
   {
     name: 'Tokyo',
     count: 89,
     image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&h=600&fit=crop',
-    region: 'Asia'
+    region: 'Asia',
+    description: 'Tokyo, the capital of Japan, is a city of contrasts, blending traditional temples and gardens with modern skyscrapers and cutting-edge technology.',
+    weather: {
+      bestTime: 'March - May, September - November',
+      avgTemp: '18°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Shibuya Crossing',
+      'Tokyo Tower',
+      'Meiji Shrine',
+      'Tsukiji Fish Market',
+      'Asakusa',
+      'Imperial Palace'
+    ]
   },
   {
     name: 'Bangkok',
     count: 98,
     image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&h=600&fit=crop',
-    region: 'Asia'
+    region: 'Asia',
+    description: 'Bangkok, the capital of Thailand, is a bustling metropolis known for its ornate temples, bustling markets, and vibrant nightlife.',
+    weather: {
+      bestTime: 'November - February',
+      avgTemp: '25°C',
+      rainfall: 'Low'
+    },
+    highlights: [
+      'Grand Palace',
+      'Wat Phra Kaew',
+      'Wat Arun',
+      'Floating Markets',
+      'Khao San Road',
+      'Chatuchak Weekend Market'
+    ]
   },
   {
     name: 'Singapore',
     count: 76,
     image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop',
-    region: 'Asia'
+    region: 'Asia',
+    description: 'Singapore, a modern city-state, is a melting pot of cultures, with a blend of Asian and Western influences. From Gardens by the Bay to Marina Bay Sands, the city is a marvel of architecture and innovation.',
+    weather: {
+      bestTime: 'February - August',
+      avgTemp: '27°C',
+      rainfall: 'High'
+    },
+    highlights: [
+      'Gardens by the Bay',
+      'Marina Bay Sands',
+      'Merlion',
+      'Chinatown',
+      'Little India',
+      'Sentosa Island'
+    ]
   },
   {
     name: 'New York',
     count: 167,
     image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop',
-    region: 'Americas'
+    region: 'Americas',
+    description: 'New York, the City That Never Sleeps, is a hub of culture, finance, and entertainment. From iconic landmarks like the Statue of Liberty to world-class museums like the Met, the city has something for everyone.',
+    weather: {
+      bestTime: 'September - November, April - June',
+      avgTemp: '18°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Statue of Liberty',
+      'Central Park',
+      'Metropolitan Museum of Art',
+      'Times Square',
+      'Brooklyn Bridge',
+      '9/11 Memorial & Museum'
+    ]
   },
   {
     name: 'Rio de Janeiro',
     count: 92,
-    image: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&h=600&fit=crop',
-    region: 'Americas'
+    image: 'https://images.unsplash.com/photo-1480060839134-75a5edca2e99?w=800&h=600&fit=crop',
+    region: 'Americas',
+    description: 'Rio de Janeiro, the vibrant capital of Brazil, is known for its stunning beaches, Carnival celebrations, and iconic landmarks like Christ the Redeemer.',
+    weather: {
+      bestTime: 'December - March',
+      avgTemp: '25°C',
+      rainfall: 'High'
+    },
+    highlights: [
+      'Christ the Redeemer',
+      'Sugarloaf Mountain',
+      'Copacabana Beach',
+      'Ipanema Beach',
+      'Tijuca Forest',
+      'Maracanã Stadium'
+    ]
   },
   {
     name: 'Cape Town',
     count: 84,
     image: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&h=600&fit=crop',
-    region: 'Africa'
+    region: 'Africa',
+    description: 'Cape Town, located at the southern tip of Africa, is a city of stunning natural beauty, with Table Mountain, Cape of Good Hope, and Boulders Beach.',
+    weather: {
+      bestTime: 'September - November, March - May',
+      avgTemp: '18°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Table Mountain',
+      'Cape of Good Hope',
+      'Boulders Beach',
+      'Robben Island',
+      'Kirstenbosch National Botanical Garden',
+      'Camps Bay'
+    ]
   },
   {
     name: 'Marrakech',
     count: 112,
     image: 'https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?w=800&h=600&fit=crop',
-    region: 'Africa'
+    region: 'Africa',
+    description: 'Marrakech, the Red City, is a sensory overload of colors, sounds, and smells. From the bustling souks to the tranquil gardens, the city is a feast for the senses.',
+    weather: {
+      bestTime: 'March - May, September - November',
+      avgTemp: '22°C',
+      rainfall: 'Low'
+    },
+    highlights: [
+      'Jemaa el-Fnaa',
+      'Bahia Palace',
+      'Majorelle Garden',
+      'Koutoubia Mosque',
+      'Medina',
+      'Atlas Mountains'
+    ]
   },
   {
     name: 'Sydney',
     count: 143,
     image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&h=600&fit=crop',
-    region: 'Oceania'
+    region: 'Oceania',
+    description: 'Sydney, the iconic Australian city, is famous for its Opera House, Harbour Bridge, and stunning beaches. From Bondi to Manly, the city is a haven for surfers and beach lovers.',
+    weather: {
+      bestTime: 'September - November, March - May',
+      avgTemp: '18°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Sydney Opera House',
+      'Sydney Harbour Bridge',
+      'Bondi Beach',
+      'Manly Beach',
+      'Blue Mountains',
+      'The Rocks'
+    ]
   },
   {
     name: 'Auckland',
     count: 87,
     image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800&h=600&fit=crop',
-    region: 'Oceania'
+    region: 'Oceania',
+    description: 'Auckland, the City of Sails, is a haven for outdoor enthusiasts, with its stunning harbor, beautiful beaches, and nearby islands.',
+    weather: {
+      bestTime: 'September - November, March - May',
+      avgTemp: '18°C',
+      rainfall: 'Moderate'
+    },
+    highlights: [
+      'Sky Tower',
+      'Auckland Harbour Bridge',
+      'Waiheke Island',
+      'Rangitoto Island',
+      'Auckland Art Gallery',
+      'Auckland Museum'
+    ]
   }
 ];
 
@@ -175,7 +352,7 @@ export const articles: Article[] = [
       <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=1200&h=600&fit=crop" alt="Amsterdam Canals" class="my-8 rounded-2xl" />
 
       <h2>2. Barcelona, Spain</h2>
-      <p>From Gaudi's architectural masterpieces to the bustling Las Ramblas, Barcelona offers an unforgettable weekend experience. Don't miss the Gothic Quarter and the famous food markets.</p>
+      <p>From Gaudi's architectural masterpieces to the bustling La Rambla, Barcelona offers an unforgettable weekend experience. Don't miss the Gothic Quarter and the famous food markets.</p>
     `
   },
   {
@@ -192,7 +369,7 @@ export const articles: Article[] = [
       <h2>Essential Electronics</h2>
       <p>Always pack your valuable electronics, chargers, and adapters in your carry-on. Include a portable battery pack for emergencies and don't forget necessary cables.</p>
       
-      <img src="https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?w=1200&h=600&fit=crop" alt="Travel Electronics" class="my-8 rounded-2xl" />
+      <img src="https://images.unsplash.com/photo-1484755560615-a4ec16b8e8d9?w=1200&h=600&fit=crop" alt="Travel Electronics" class="my-8 rounded-2xl" />
 
       <h2>Comfort Items</h2>
       <p>Pack a light jacket or sweater, neck pillow, and eye mask for long flights. Consider noise-canceling headphones for a more peaceful journey.</p>

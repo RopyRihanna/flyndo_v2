@@ -5,6 +5,11 @@ export interface FlightDeal {
   price: number;
   date: string;
   image: string;
+  airline: string;
+  duration: string;
+  baggage: string;
+  description: string;
+  terms: string[];
 }
 
 export interface SearchParams {
@@ -18,6 +23,13 @@ export interface Destination {
   count: number;
   image: string;
   region: string;
+  description: string;
+  weather: {
+    bestTime: string;
+    avgTemp: string;
+    rainfall: string;
+  };
+  highlights: string[];
 }
 
 export interface Author {

@@ -1,3 +1,15 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/author/[id]/page": "app/author/[id]/page.js",
+  "/deal/[id]/page": "app/deal/[id]/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/destinations/page": "app/destinations/page.js",
+  "/destinations/[region]/page": "app/destinations/[region]/page.js",
+  "/page": "app/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/deals/page": "app/deals/page.js",
+  "/terms/page": "app/terms/page.js"
 }
